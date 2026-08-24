@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-money-bill-trend-up"></i>
+            <p>Expense Tracker</p>
+        </div>
+       <button id="dark-btn" class="dark-btn">
+       <i id="moon" class="fa-solid fa-moon"></i>
+
+
+    </button>
+    </header>
+    <section id="statics">
+        <h2>statics section</h2>
+        <div class="container-statics">
+        <div class="card"><h3>Total Expense</h3><p  id="total-expense"></p></div>
+        <div class="card"><h3>Count Expense</h3><p id="total-count" ></p></div>
+        <div class="card"><h3>Cash Expense</h3><p id="cash-expense"></p></div>
+        <div class="card"><h3>Card Expense</h3><p id="card-expense"></p></div>
+        <div class="card"><h3>highest Expense</h3><p  id="highest-expense"></p></div>
+        <div class="card"><h3>lowest Expense</h3><p id="lowest-expense"></p></div>
+    </div>
+    </section>
+    <section id="Add-section">
+        <h2>Add Expense</h2>
+      <div class="container-add">
+        <div class="name-field">
+        <input type="text" placeholder="Name of Expense...." id="name">
+        <p id="error-name"></p>    
+    </div>
+    <div class="amount-field">
+        <input type="number" placeholder="Amount of Expense...." id="amount" >
+        <p id="error-amount"></p>
+    </div>
+    <div class="category-field">
+        <select name="category" id="category">
+           <option value="" disabled selected >select category</option>
+            <option value="food">food</option>
+            <option value="bills">bills</option>
+             <option value="education">education</option>
+             <option value="shopping">shopping</option>
+              <option value="transport">transport</option>
+               <option value="health">health</option>
+               <option value="other">other</option>
+        </select>
+        <p id="error-category"></p>
+        </div>
+        <div class="payment-field">
+        <select name="payment-method" id="payment-method">
+            <option value="" disabled selected> select payment-method</option>
+            <option value="cash">cash</option>
+            <option value="card">card</option>
+        </select>
+        <p id="error-payment"></p>
+        </div>
+        <div class="date-field">
+        <input type="date" class="date" id="date">
+        <p id="error-date"></p>
+        </div>
+        <button class="add-btn" id="add-expense">Add Expense</button>
+      </div>
+      <p id="error"></p>
+    </section>
+    <section id="search-section">
+        <h2>search section</h2>
+        <div class="container-search">
+            <input type="search" id="search" placeholder="search for Expense....">
+            <i class="fa-solid fa-magnifying-glass search"></i>
+        </div>
+    </section>
+   <section id="filter-sort">
+    <h2>Sort & filter</h2>
+    <div class="container-filter-sort">
+    <div class="filter-container">
+        <div class="category-filter">
+        <p>category:</p>
+       
+        <select name="filter-category" id="filter-category">
+              <option value="all"  selected >all category</option>
+            <option value="food">food</option>
+            <option value="bills">bills</option>
+             <option value="education">education</option>
+             <option value="shopping">shopping</option>
+              <option value="transport">transport</option>
+               <option value="health">health</option>
+               <option value="other">other</option>
+        </select>
+        </div>
+        <div class="payment-filter">
+         <p>payment</p>
+         <select name="filter-payment-method" id="filter-payment-method">
+            <option value="all" disabled selected> all payment-method</option>
+            <option value="cash">cash</option>
+            <option value="card">card</option>
+        </select>
+        </div>
+    </div>
+    <div class="container-sort">
+        <p>sort by:</p>
+        <select name="sort-expense" id="sort-expense">
+          
+            <option value="newest">newest</option>
+            <option value="oldest">oldest</option>
+            <option value="highest amount">highest amount</option>
+            <option value="lowest amount">lowest amount</option>
+            <option value="a-z">a-z</option>
+            <option value="z-a">z-a</option>
+        </select>
+    </div>
+    </div>
+   </section>
+        <section id="Expense list">
+      
+        <h2>Expense list</h2>
+        <div class="container-expense">
+             <div id="expense-container"></div></div>
+    </section>
+   <script src="script.js"></script> 
+</body>
+</html>
