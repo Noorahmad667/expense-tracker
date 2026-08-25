@@ -234,16 +234,22 @@ const expenseCard=cardExpenseFilter.reduce((acc,expense)=>{
     return acc+Number(expense.amount)
 },0)
 cardExpenseElement.textContent=`${expenseCard} $`
-const highestExpense=expenses.reduce((highest,expense)=>{
+if(expenses.length===0){
+    highestExpenseElement.textContent=`-`
+    lowestExpenseElement.textContent=`-` 
+}
+else{
+   const highestExpense=expenses.reduce((highest,expense)=>{
     return Math.max(highest, expense.amount)
 },0)
-highestExpenseElement.textContent=`${highestExpense} $`
+highestExpenseElement.textContent=`${highestExpense}$`
 const lowestExpense=expenses.reduce((lowest,expense)=>{
  return Math.min(lowest,Number(expense.amount))
 },Number(expenses[0].amount))
-lowestExpenseElement.textContent=`${lowestExpense} $`
-
+lowestExpenseElement.textContent=`${lowestExpense} $` 
+}
 console.log(darkBtn);
+
 
 darkBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-btn");

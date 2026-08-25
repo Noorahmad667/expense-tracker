@@ -307,12 +307,13 @@ body.dark-btn header .logo p{
     color:#214aa3;
 }
 body.dark-btn header .logo i{
-    color:#214aa3;
+    color:#214aa3; 
+    
 }
 body.dark-btn .expensve-card{
     background-color: #000;
     color: #ececec;
-    border: 1px solid #2563EB;
+    
    
 }
 body.dark-btn .empty-state{
