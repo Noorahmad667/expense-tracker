@@ -26,6 +26,7 @@ console.log(darkBtn);
 
 const expenses=JSON.parse(localStorage.getItem("list")) ||[];
 displayExpenses(expenses)
+updateStatics()
 let editIndex=null;
 function displayExpenses(item){
    
@@ -47,6 +48,7 @@ deleteBtn.addEventListener("click",()=>{
     expenses.splice(index,1)
     localStorage.setItem("list",JSON.stringify(expenses))
    displayExpenses(expenses)
+   updateStatics()
 })
    const editBtn=document.createElement("button");
 editBtn.textContent="Edit";
@@ -66,7 +68,7 @@ editBtn.addEventListener("click",()=>{
 })} } 
 function createElementCard(expense){
 const card=document.createElement("div");
-expenseContainer.appendChild(card)
+
 card.classList.add("expensve-card");
 const title=document.createElement("h3");
 card.append(title);
@@ -144,7 +146,7 @@ else if(editIndex!==null)
 localStorage.setItem("list",JSON.stringify(expenses))
 
 displayExpenses(expenses)
-
+updateStatics()
 nameExpense.value="";
 amountExpense.value="";
 category.value="";
@@ -212,6 +214,7 @@ sortExpense.addEventListener("change",()=>{
    
   
 })
+function updateStatics(){
 const totalExpenses=expenses.reduce((acc,expense)=>{
   return acc+Number(expense.amount);
     
@@ -248,7 +251,7 @@ const lowestExpense=expenses.reduce((lowest,expense)=>{
 },Number(expenses[0].amount))
 lowestExpenseElement.textContent=`${lowestExpense} $` 
 }
-console.log(darkBtn);
+}
 
 
 darkBtn.addEventListener("click", () => {
